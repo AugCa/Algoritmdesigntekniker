@@ -7,11 +7,9 @@ public class QueensProblem {
 
     public void run(){
         placeQueens(0);
-        for(String solution : solutions){
+        for(String solution : solutions)
             System.out.print(solution);
-        }
     }
-
 
     public void placeQueens(int rowIndex){
         for(int column = 0; column < 8; column++){
@@ -25,8 +23,6 @@ public class QueensProblem {
         }
     }
 
-
-
     public boolean canPlace(int column, int rowIndex){
         int tried = 0;
         while(tried < rowIndex){
@@ -38,19 +34,15 @@ public class QueensProblem {
         return true;
     }
 
-
-
     public String buildSolution(int[] queens){
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i < 8; i++){
-            for(int j = 0; j < 8; j++){
+            for(int j = 0; j < 8; j++)
                 builder.append((queens[i] == j) ? " ♕ " :  " - ");
-            }
+
             builder.append("\n");
         }
         builder.append("\n");
         return builder.toString();
     }
-
-
 }
